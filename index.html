@@ -895,8 +895,41 @@
   </div>
 
   <script>
-    // Chapter Data
+    // 3 Collector Cover Variants - Randomly Selected on Each Open
+    const coverVariants = [
+      {
+        id: 1,
+        title: "שער A: The Epic Hero Montage",
+        tag: "VAR A",
+        src: "assets/cover_01.jpg"
+      },
+      {
+        id: 2,
+        title: "שער B: The Grand Vista",
+        tag: "VAR B",
+        src: "assets/cover_02.jpg"
+      },
+      {
+        id: 3,
+        title: "שער C: Between Dynasties and Neon",
+        tag: "VAR C",
+        src: "assets/cover_03.jpg"
+      }
+    ];
+
+    // Pick random cover on load
+    let currentCoverIdx = Math.floor(Math.random() * coverVariants.length);
+
+    // Chapter & Cover Data
     const comicPages = [
+      {
+        num: 0,
+        isCover: true,
+        title: "Roy's China Adventure — Graphic Novel",
+        loc: "Special Collector's Edition Cover",
+        synopsis: "עמוד השער הרשמי של הרומן הגרפי. בכל פתיחה של הספר נבחר שער אקראי מתוך 3 גרסאות אספנים! לחץ על כפתור השער 🎲 כדי להחליף בין הגרסאות בכל רגע.",
+        get src() { return coverVariants[currentCoverIdx].src; }
+      },
       {
         num: 1,
         title: "Chapter 1: The High Horizon",
@@ -983,7 +1016,7 @@
       }
     ];
 
-    let currentPage = 1;
+    let currentPage = 0; // Starts on Cover Page!
     let readMode = 'book'; // 'book' | 'scroll'
     let hudVisible = true;
     let soundEnabled = true;
@@ -1050,31 +1083,48 @@
       btn.innerText = soundEnabled ? '🔊' : '🔇';
     }
 
+    // Cycle through cover variants dynamically
+    function switchCoverVariant() {
+      currentCoverIdx = (currentCoverIdx + 1) % coverVariants.length;
+      playPaperTurnSound();
+      updateBookPage('next');
+    }
+
     // ================= PAGE RENDERING & UPDATES =================
     function updateBookPage(animateDirection = null) {
-      const data = comicPages[currentPage - 1];
-      const pageStr = String(currentPage).padStart(2, '0');
+      const data = comicPages.find(p => p.num === currentPage) || comicPages[0];
       const img = document.getElementById('page-img');
       const shell = document.getElementById('book-shell');
       const shadow = document.getElementById('turn-shadow');
 
       // Update text HUD elements
-      document.getElementById('header-page-pill').innerText = `P. ${pageStr} / 12`;
-      document.getElementById('header-loc').innerText = data.loc;
-      document.getElementById('chip-title').innerText = data.title;
-      document.getElementById('chip-loc').innerText = `📍 ${data.loc}`;
+      if (data.isCover) {
+        document.getElementById('header-page-pill').innerText = `COVER • ${coverVariants[currentCoverIdx].tag}`;
+        document.getElementById('header-loc').innerText = coverVariants[currentCoverIdx].title;
+        document.getElementById('chip-title').innerText = `${data.title} [${coverVariants[currentCoverIdx].tag}]`;
+        document.getElementById('chip-loc').innerText = `🎲 לחץ להחלפת שער אקראי (1 מתוך 3)`;
+      } else {
+        const pageStr = String(currentPage).padStart(2, '0');
+        document.getElementById('header-page-pill').innerText = `P. ${pageStr} / 12`;
+        document.getElementById('header-loc').innerText = data.loc;
+        document.getElementById('chip-title').innerText = data.title;
+        document.getElementById('chip-loc').innerText = `📍 ${data.loc}`;
+      }
+
       document.getElementById('modal-synopsis-title').innerText = data.title;
       document.getElementById('modal-synopsis-text').innerText = data.synopsis;
 
       // Update Scrubber
       const scrubber = document.getElementById('scrubber');
+      scrubber.min = 0;
+      scrubber.max = 12;
       scrubber.value = currentPage;
       const pct = Math.round((currentPage / 12) * 100);
-      document.getElementById('scrub-curr-page').innerText = `עמוד ${currentPage} מתוך 12`;
+      document.getElementById('scrub-curr-page').innerText = data.isCover ? `עמוד שער (${coverVariants[currentCoverIdx].tag})` : `עמוד ${currentPage} מתוך 12`;
       document.getElementById('scrub-pct').innerText = `${pct}% הושלמו`;
 
       // Update Steppers
-      document.getElementById('btn-prev').disabled = currentPage === 1;
+      document.getElementById('btn-prev').disabled = currentPage === 0;
       document.getElementById('btn-next').disabled = currentPage === 12;
 
       // Reset Zoom on page change
@@ -1098,6 +1148,39 @@
       } else {
         img.src = data.src;
       }
+
+      // Update drawer active highlight
+      document.querySelectorAll('.drawer-item').forEach((item, idx) => {
+        item.classList.toggle('active', comicPages[idx] && comicPages[idx].num === currentPage);
+      });
+    }
+
+    function nextPage() {
+      if (currentPage < 12) {
+        currentPage++;
+        playPaperTurnSound();
+        triggerTapVisual('left');
+        updateBookPage('next');
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        playPaperTurnSound();
+        triggerTapVisual('right');
+        updateBookPage('prev');
+      }
+    }
+
+    function goToPage(n) {
+      if (n >= 0 && n <= 12 && n !== currentPage) {
+        const dir = n > currentPage ? 'next' : 'prev';
+        currentPage = n;
+        playPaperTurnSound();
+        updateBookPage(dir);
+      }
+    }
 
       // Update drawer active highlight
       document.querySelectorAll('.drawer-item').forEach((item, idx) => {
@@ -1335,17 +1418,21 @@
     // ================= SCRUBBER INTERACTION =================
     function handleScrubInput(val) {
       const num = parseInt(val, 10);
-      const data = comicPages[num - 1];
+      const data = comicPages.find(p => p.num === num) || comicPages[0];
       const tooltip = document.getElementById('scrub-tooltip');
       const tooltipImg = document.getElementById('scrub-tooltip-img');
       const tooltipText = document.getElementById('scrub-tooltip-text');
 
       tooltipImg.src = data.src;
-      tooltipText.innerText = `עמוד ${num}: ${data.title.split(':')[1] || ''}`;
+      if (data.isCover) {
+        tooltipText.innerText = `עמוד שער (${coverVariants[currentCoverIdx].tag})`;
+      } else {
+        tooltipText.innerText = `עמוד ${num}: ${data.title.split(':')[1] || ''}`;
+      }
 
       // Position tooltip above thumb
       const scrubber = document.getElementById('scrubber');
-      const pct = (num - 1) / 11;
+      const pct = num / 12;
       const rect = scrubber.getBoundingClientRect();
       const leftPos = rect.left + (rect.width * pct);
       tooltip.style.left = `${leftPos}px`;
@@ -1370,10 +1457,12 @@
           closeDrawer();
         };
 
+        const badgeText = p.isCover ? `COVER • ${coverVariants[currentCoverIdx].tag}` : `PAGE ${String(p.num).padStart(2, '0')}`;
+
         item.innerHTML = `
           <img class="drawer-thumb" src="${p.src}" alt="Thumb ${p.num}">
           <div class="drawer-item-info">
-            <div class="drawer-item-num">PAGE ${String(p.num).padStart(2, '0')}</div>
+            <div class="drawer-item-num">${badgeText}</div>
             <div class="drawer-item-title">${p.title}</div>
             <div class="drawer-item-loc">📍 ${p.loc}</div>
           </div>
@@ -1394,7 +1483,12 @@
 
     // ================= SYNOPSIS MODAL =================
     function openSynopsis() {
-      document.getElementById('synopsis-modal').classList.add('active');
+      const data = comicPages.find(p => p.num === currentPage) || comicPages[0];
+      if (data.isCover) {
+        switchCoverVariant();
+      } else {
+        document.getElementById('synopsis-modal').classList.add('active');
+      }
     }
 
     function closeSynopsis() {
