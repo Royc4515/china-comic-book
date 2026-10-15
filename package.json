@@ -1,0 +1,14 @@
+{
+  "name": "roys-china-adventure",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Roy's China Adventure - interactive graphic novel reader",
+  "scripts": {
+    "start": "node serve-review.js",
+    "optimize": "node scripts/optimize-images.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

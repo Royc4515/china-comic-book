@@ -14,6 +14,47 @@ This project is a 12-page virtual comic book chronicling Roy's 14-day expedition
 
 ---
 
+## 📱 The Reader (`index.html`) — mobile-native
+
+A left-to-right book that is built for phones first and scales up to tablets and desktop.
+
+* **Touch**: the page follows your finger (hinged 3D page turn with dynamic shading), flick to complete, tap the right/left side to turn, tap the middle to hide/show menus, pinch or double-tap to zoom, pan when zoomed, swipe up for the chapter synopsis, drag sheets down to dismiss.
+* **Sound** (all synthesised in the browser, no audio files): paper-turn foley that pans with the page direction, tick/tap UI sounds, a pentatonic chime, a gong on opening, and a per-chapter ambience (wind, city, train, candle, mist, jazz). Modes: off / effects / effects + ambience. iOS needs one tap to start audio, which the opening screen provides.
+* **Music**: two real CC BY tracks (`assets/music/`, credits in `assets/music/CREDITS.md` and in Settings) that crossfade as the chapter mood changes; the synth pads step aside while music plays, leaving only wind/city/train texture. Switchable in Settings.
+* **Haptics**: Vibration API on Android; the Safari `switch` haptic on iOS 17.4+ (iOS only allows it inside a tap/gesture handler).
+* **Effects**: chapter-themed particles (snow on the Great Wall, lanterns in Xi'an, neon on the Bund…), accent colour per chapter, gyroscope/mouse tilt with a holographic foil on the cover. All respect `prefers-reduced-motion` and can be switched off in Settings.
+* **App-like**: installable (PWA), works offline once visited, remembers your page, deep-links with `#5`, keeps the screen awake, handles notches/safe areas and landscape.
+* **Modes**: page-flip or vertical scroll.
+
+### Layout of the code
+
+```text
+index.html            markup only
+css/base.css          tokens, stage, 3D leaves, effects layers
+css/hud.css           top bar, dock, sheets, settings, splash, scroll mode
+js/core.js            pure logic (gesture/zoom/flip maths) — unit tested
+js/data.js            chapters, covers, per-chapter theme (accent / particles / ambience)
+js/gestures.js        pointer-event recogniser (drag, pinch, tap, double-tap, wheel)
+js/reader.js          the book: leaves, settle physics, zoom
+js/audio-engine.js    Web Audio synthesis      js/audio.js  unlock + modes
+js/fx.js              particles + tilt         js/haptics.js
+js/ui.js, app.js      HUD, sheets, settings, wiring
+sw.js, manifest.webmanifest   offline + install
+```
+
+### Commands
+
+```bash
+npm install            # one-off (installs sharp, used only to build images)
+npm start              # dev server (PORT=3457 npm start to change the port) -> /index.html
+npm run optimize       # rebuild assets/web/*.webp (+ thumbs, icons) from assets/*.png
+npm test               # unit tests for js/core.js
+```
+
+The reader loads the optimised WebP copies in `assets/web/` (about 75% smaller than the originals). The review dashboard regenerates the matching WebP automatically whenever you pick a variant; if you replace images by hand, run `npm run optimize`.
+
+---
+
 ## 📂 Project Directory Structure
 
 ```text
