@@ -1,0 +1,238 @@
+[
+  {
+    "pageNumber": 1,
+    "title": "The High Horizon",
+    "location": "Beijing CBD — Atmosphere Bar (80th Floor)",
+    "description": "Atmosphere Bar 80th-floor, Beijing night skyline toast, toasting L'Chaim, Mei taking photo.",
+    "variants": [
+      {
+        "code": "a",
+        "filename": "page_01_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_01_a.png"
+      },
+      {
+        "code": "b",
+        "filename": "page_01_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_01_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 2,
+    "title": "Imperial to Avant-Garde",
+    "location": "Forbidden City (Meridian Gate) & 798 Art District",
+    "description": "Meridian Gate imperial scale with Lao Feng, bronze guardian lion, 798 Bauhaus kinetic sculpture with Mei and Jin.",
+    "variants": [
+      {
+        "code": "a",
+        "filename": "page_02_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_02_a.png"
+      },
+      {
+        "code": "b",
+        "filename": "page_02_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_02_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 3,
+    "title": "The Dragon’s Crest",
+    "location": "Mutianyu Great Wall & Downhill Toboggan",
+    "description": "Snowy Great Wall watchtowers, Lao Feng reflection on stone, high-speed toboggan track rush.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "41abf303-fc1e-4097-835b-da00b5273bfb",
+        "filename": "page_03_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_03_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "27df40d4-6c65-44b6-8379-6a948c348cdd",
+        "filename": "page_03_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_03_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 4,
+    "title": "Sanctuary in the Capital",
+    "location": "Chaoyang District — Candlelit Shabbat Table",
+    "description": "Friday twilight over Beijing, silver candlesticks, braided challah, Kiddush cup, festive table.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "688cb989-4a78-49a0-8714-526681cd2d13",
+        "filename": "page_04_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_04_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "a6b6f1b7-d597-45da-9ef8-754b1ffb1bc0",
+        "filename": "page_04_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_04_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 5,
+    "title": "Velocity of Steel",
+    "location": "CR400 Fuxing G-Train (Beijing to Xi'an)",
+    "description": "350 km/h bullet train racing across plains, modern cabin with Mei, arrival at Xi'an North.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "e0b93918-cbf8-4e67-96a2-fafc4ef96c21",
+        "filename": "page_05_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_05_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "52a12f53-19e5-4aee-9842-d986dd4117a9",
+        "filename": "page_05_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_05_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 6,
+    "title": "Sunset Ramparts",
+    "location": "Xi'an 14km Ancient Ming City Wall",
+    "description": "Cycling rental bicycles atop wide stone ramparts at golden hour sunset, glowing red lanterns, Bell & Drum Towers.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "b0fe7cee-90e1-4640-adf9-b3f69547d14d",
+        "filename": "page_06_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_06_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "df3dd5ff-917d-433c-8548-7ec78addecd1",
+        "filename": "page_06_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_06_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 7,
+    "title": "The Silent Legion & Night Alleyways",
+    "location": "Terracotta Army Pit 1 & Muslim Quarter (Huimin Jie)",
+    "description": "Underground Pit 1 warriors with Lao Feng, archer close-up, night market flaming woks & biangbiang noodles.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "a3a29b22-1444-4a6f-a28a-80d274c1d135",
+        "filename": "page_07_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_07_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "dccccf7f-371c-4b24-987b-21e6b5901237",
+        "filename": "page_07_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_07_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 8,
+    "title": "The Sky Elevator",
+    "location": "Zhangjiajie National Forest — Bailong Glass Elevator",
+    "description": "326m outdoor glass elevator climbing sheer vertical cliff, inside glass pod view, misty karst spires.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "1fc9de5b-2771-4caa-9073-9da5bcada0f6",
+        "filename": "page_08_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_08_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "fe0fb58f-9a6d-4d2d-b0e3-7254bfd6d457",
+        "filename": "page_08_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_08_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 9,
+    "title": "The Floating Monoliths",
+    "location": "Zhangjiajie — Avatar Hallelujah Mountain & Natural Bridge",
+    "description": "Yuanjiajie floating stone pillars in sea of clouds, Lao Feng explaining ancient geology, walking natural stone bridge.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "a9366311-d81d-477d-8e93-a1b9eb15f66c",
+        "filename": "page_09_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_09_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "5c4f481c-6beb-4d98-9bf3-352031ebd5db",
+        "filename": "page_09_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_09_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 10,
+    "title": "Heaven’s Gate & 999 Stairs",
+    "location": "Tianmen Mountain — Natural Arch & Staircase",
+    "description": "Colossal water-carved rock arch in mountain, climbing 999 steep stone stairs with Jin & Lao Feng, summit triumph.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "0522e440-dd2a-4ee2-8682-13a5211ca175",
+        "filename": "page_10_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_10_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "4aa1041a-95f4-46ba-b460-1236d52638cf",
+        "filename": "page_10_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_10_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 11,
+    "title": "Jazz on the Bund",
+    "location": "Shanghai — Fairmont Peace Hotel & Pudong Skyline",
+    "description": "1920s jazz musicians in Peace Hotel, Bund riverside walk at night, dazzling neon Pudong skyline and Oriental Pearl Tower.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "64fe1cf7-36a0-4e5f-b9e3-54ac03aa35d3",
+        "filename": "page_11_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_11_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "94961079-a715-484d-800a-7c05bf8c078c",
+        "filename": "page_11_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_11_b.png"
+      }
+    ]
+  },
+  {
+    "pageNumber": 12,
+    "title": "Speed of Light & The Keepsake",
+    "location": "Shanghai Maglev Train & Pudong Airport (Finale)",
+    "description": "431 km/h Maglev train, Mei presenting photo keepsake album of their whole trip to Roy, sunset plane, THE END.",
+    "variants": [
+      {
+        "code": "a",
+        "uuid": "ac8e9170-728a-41ac-98d6-954dffe76141",
+        "filename": "page_12_a.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_12_a.png"
+      },
+      {
+        "code": "b",
+        "uuid": "67141047-89fc-4659-b6cb-978f202b25ed",
+        "filename": "page_12_b.png",
+        "localPath": "c:\\Users\\Roy\\02_Dev\\china-comic-book\\pages_review\\page_12_b.png"
+      }
+    ]
+  }
+]
