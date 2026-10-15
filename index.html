@@ -895,25 +895,43 @@
   </div>
 
   <script>
-    // 3 Collector Cover Variants - Randomly Selected on Each Open
+    // 6 Collector Cover Variants from Google Flow - Randomly Selected on Each Open
     const coverVariants = [
       {
         id: 1,
-        title: "שער A: The Epic Hero Montage",
-        tag: "VAR A",
+        title: "שער א': The Epic Hero Odyssey",
+        tag: "VAR 1",
         src: "assets/cover_01.jpg"
       },
       {
         id: 2,
-        title: "שער B: The Grand Vista",
-        tag: "VAR B",
+        title: "שער ב': Grand Vista — Great Wall Overlook",
+        tag: "VAR 2",
         src: "assets/cover_02.jpg"
       },
       {
         id: 3,
-        title: "שער C: Between Dynasties and Neon",
-        tag: "VAR C",
+        title: "שער ג': Between Dynasties and Neon",
+        tag: "VAR 3",
         src: "assets/cover_03.jpg"
+      },
+      {
+        id: 4,
+        title: "שער ד': The Journey of a Lifetime (פסגות וערפילים)",
+        tag: "VAR 4",
+        src: "assets/cover_04.jpg"
+      },
+      {
+        id: 5,
+        title: "שער ה': Watchtower Sunset Ridge",
+        tag: "VAR 5",
+        src: "assets/cover_05.jpg"
+      },
+      {
+        id: 6,
+        title: "שער ו': Cyberpunk & Ancient Heritage (מגלב ופנסים)",
+        tag: "VAR 6",
+        src: "assets/cover_06.jpg"
       }
     ];
 
@@ -926,8 +944,8 @@
         num: 0,
         isCover: true,
         title: "Roy's China Adventure — Graphic Novel",
-        loc: "Special Collector's Edition Cover",
-        synopsis: "עמוד השער הרשמי של הרומן הגרפי. בכל פתיחה של הספר נבחר שער אקראי מתוך 3 גרסאות אספנים! לחץ על כפתור השער 🎲 כדי להחליף בין הגרסאות בכל רגע.",
+        loc: "Special Collector's Edition Cover (Google Flow)",
+        synopsis: "עמוד השער הרשמי של הרומן הגרפי (הופק ב-Google Flow). בכל פתיחה של הספר נבחר שער אקראי מתוך 6 גרסאות אספנים מרהיבות! לחץ על כפתור השער 🎲 כדי להחליף בין הגרסאות בכל רגע.",
         get src() { return coverVariants[currentCoverIdx].src; }
       },
       {
